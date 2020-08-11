@@ -1,11 +1,25 @@
 package main
 
-/* In this file, you should implement function "NewNode" and
- * a struct which implements the interface "dhtNode".
- */
+import (
+	"Chord"
+	"fmt"
+	"net"
+	"net/rpc"
+	"strconv"
+)
 
 func NewNode(port int) dhtNode {
-	// Todo: create a node and then return it.
+	res:=new(Chord.Client)
+	res.Server=rpc.NewServer()
+	err:=res.Server.Register(&res.Node)
+	if err!=nil{
+		fmt.Println(err)
+	}
+	_=res.Node.Init(strconv.Itoa(port),new(int))
+	res.Listener,err=net.Listen("tcp",":"+strconv.Itoa(port))
+	if err!=nil{
+		fmt.Println("Error: Listen error: ",err)
+	}
+	go res.Server.Accept(res.Listener)
+	return res
 }
-
-// Todo: implement a struct which implements the interface "dhtNode".
