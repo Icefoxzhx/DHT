@@ -123,7 +123,7 @@ func (this *Client) Get(key string)(succ bool,val string){
 		_=this.Node.FindSuccessor(&LookupType{Id,0},&dest)
 		client,err:=rpc.Dial("tcp",dest.Ip)
 		if err==nil{
-			_=client.Call("Node.Get",&key,&val)
+			err=client.Call("Node.Get",&key,&val)
 			_=client.Close()
 		}
 		succ= err==nil
