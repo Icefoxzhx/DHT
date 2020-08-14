@@ -1,11 +1,11 @@
 package main
-
+/*
 import (
 	"flag"
 	"math/rand"
 	"os"
 	"time"
-)
+)*/
 func main(){
 	Work()
 }
