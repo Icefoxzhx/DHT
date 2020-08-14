@@ -6,7 +6,10 @@ import (
 	"os"
 	"time"
 )
-
+func main(){
+	Work()
+}
+/*
 var (
 	help     bool
 	testName string
@@ -60,7 +63,7 @@ func main() {
 	case "advance":
 		_, _ = yellow.Println("Advance Test Begins:")
 
-		/* ------ Force Quit Test Begins ------ */
+		 ------ Force Quit Test Begins ------ 
 		forceQuitPanicked, forceQuitFailedCnt, forceQuitTotalCnt := forceQuitTest()
 		if forceQuitPanicked {
 			_, _ = red.Printf("Force Quit Test Panicked.")
@@ -74,9 +77,9 @@ func main() {
 			_, _ = green.Printf("Force quit test passed with fail rate %.4f\n", forceQuitFailRate)
 		}
 		time.Sleep(afterTestSleepTime)
-		/* ------ Force Quit Test Ends ------ */
+		 ------ Force Quit Test Ends ------ 
 
-		/* ------ Quit & Stabilize Test Begins ------ */
+		 ------ Quit & Stabilize Test Begins ------ 
 		QASPanicked, QASFailedCnt, QASTotalCnt := quitAndStabilizeTest()
 		if QASPanicked {
 			_, _ = red.Printf("Quit & Stabilize Test Panicked.")
@@ -89,7 +92,7 @@ func main() {
 		} else {
 			_, _ = green.Printf("Quit & Stabilize test passed with fail rate %.4f\n", QASFailRate)
 		}
-		/* ------ Quit & Stabilize Test Ends ------ */
+		 ------ Quit & Stabilize Test Ends ------ 
 	}
 
 	_, _ = cyan.Println("\nFinal print:")
@@ -112,4 +115,5 @@ func main() {
 
 func usage() {
 	flag.PrintDefaults()
-}
+}*/
+
